@@ -16,6 +16,8 @@
 		2F46A2F628F1A39200E648C6 /* Note+Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F46A2F528F1A39200E648C6 /* Note+Previews.swift */; };
 		2F46A2F828F1B9A200E648C6 /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F46A2F728F1B9A200E648C6 /* NoteListView.swift */; };
 		2F46A2FA28F1BB8300E648C6 /* CreditsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F46A2F928F1BB8300E648C6 /* CreditsScreen.swift */; };
+		2F46A2FD28F1C04900E648C6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2F46A2FB28F1C04900E648C6 /* README.md */; };
+		2F46A2FE28F1C04900E648C6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2F46A2FC28F1C04900E648C6 /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		2F46A2F528F1A39200E648C6 /* Note+Previews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+Previews.swift"; sourceTree = "<group>"; };
 		2F46A2F728F1B9A200E648C6 /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
 		2F46A2F928F1BB8300E648C6 /* CreditsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsScreen.swift; sourceTree = "<group>"; };
+		2F46A2FB28F1C04900E648C6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2F46A2FC28F1C04900E648C6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 		2F46A2B928F00BAE00E648C6 /* NoteDictate Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				2F46A2FC28F1C04900E648C6 /* LICENSE */,
+				2F46A2FB28F1C04900E648C6 /* README.md */,
 				2F46A2CA28F00F5700E648C6 /* App */,
 				2F46A2C828F00F5100E648C6 /* Model */,
 				2F46A2C928F00F5600E648C6 /* UI */,
@@ -164,7 +170,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F46A2FD28F1C04900E648C6 /* README.md in Resources */,
 				2F46A2C228F00BAE00E648C6 /* Preview Assets.xcassets in Resources */,
+				2F46A2FE28F1C04900E648C6 /* LICENSE in Resources */,
 				2F46A2BF28F00BAE00E648C6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
