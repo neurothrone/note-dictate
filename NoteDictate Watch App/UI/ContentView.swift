@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView: View {  
   @State private var text = ""
   @State private var notes: [Note] = []
   
@@ -22,6 +22,7 @@ struct ContentView: View {
           CreditsScreen()
         }
         .edgesIgnoringSafeArea(.bottom)
+        .onAppear(perform: load)
     }
   }
   
@@ -72,13 +73,45 @@ extension ContentView {
     }
     
     text = ""
+    
+    save()
   }
   
   private func delete(at offsets: IndexSet) {
     guard let index = offsets.first else { return }
     
-    withAnimation(.easeInOut) {
+    _ = withAnimation(.easeInOut) {
       notes.remove(at: index)
+    }
+    
+    save()
+  }
+  
+  private func getDocumentsDirectory() -> URL {
+    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    return paths.first!
+  }
+  
+  private func save() {
+    do {
+      let data = try JSONEncoder().encode(notes)
+      let url = getDocumentsDirectory().appending(path: "notes")
+      try data.write(to: url)
+    } catch {
+      print("❌ -> Failed to save notes")
+    }
+  }
+  
+  private func load() {
+    DispatchQueue.main.async {
+      
+      do {
+        let url = getDocumentsDirectory().appending(path: "notes")
+        let data = try Data(contentsOf: url)
+        notes = try JSONDecoder().decode([Note].self, from: data)
+      } catch {
+        // Do nothing: no previous data found
+      }
     }
   }
 }

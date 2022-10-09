@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Note: Identifiable {
-  let id: UUID = .init()
+struct Note: Identifiable, Codable {
+  let id: UUID
   let text: String
+  
+  init(id: UUID = .init(), text: String) {
+    self.id = id
+    self.text = text
+  }
 }

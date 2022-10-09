@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct NoteListView: View {
+  @AppStorage("lineCount") var lineCount = 1
+  
   let notes: [Note]
   let onDeleteNote: (IndexSet) -> Void
-  
-
   
   var body: some View {
     List {      
@@ -20,10 +20,15 @@ struct NoteListView: View {
           DetailScreen(note: notes[index], index: index, noteCount: notes.count)
         } label: {
           Text(notes[index].text)
-            .lineLimit(1)
+            .lineLimit(lineCount)
         }
       }
       .onDelete(perform: onDeleteNote)
+      
+      Stepper(value: $lineCount, in: 1...4) {
+        Text("Lines: \(lineCount)")
+          .font(.body)
+      }
     }
   }
 }
